@@ -9,8 +9,6 @@ const handler = async (req, res) => {
   if (req.method === 'POST') {
     const data = req.body
 
-    // const { title, image, address, description } = data
-
     // Store into database
     const client = await MongoClient.connect(`mongodb+srv://${username}:${userPassword}@meetup-places.xjzy3.mongodb.net/${databaseName}?retryWrites=true&w=majority`)
     const db = client.db()
