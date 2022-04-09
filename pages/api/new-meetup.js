@@ -3,7 +3,7 @@ import { MongoClient } from 'mongodb'
 
 const databaseName = 'meetups'
 const username = 'walid'
-const userPassword = ''
+const userPassword = ''  // enter password of the database
 
 const handler = async (req, res) => {
   if (req.method === 'POST') {

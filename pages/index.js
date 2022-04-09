@@ -1,4 +1,5 @@
-import { Fragment, useEffect, useState } from 'react';
+import Head from 'next/head'
+import { Fragment } from 'react';
 import { MongoClient } from 'mongodb';
 
 import MeetupList from '../components/meetups/MeetupList'
@@ -15,13 +16,18 @@ const DUMMY_MEETUPS = [
 
 const databaseName = 'meetups'
 const username = 'walid'
-const userPassword = ''
+const userPassword = ''  // enter password of the database
 
 const HomePage = ({ meetups }) => {
 
   return (
     <Fragment>
-      <h1>HomePage</h1>
+      <Head>
+        <title>NextJs Meetups</title>
+        <meta
+          name='description' content='Brows huge list of highly active React-Next Academind meetups place'
+        />
+      </Head>
       <MeetupList meetups={meetups} />
     </Fragment>
   )

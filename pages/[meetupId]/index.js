@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react'
 import { MongoClient, ObjectId } from 'mongodb'
+import Head from 'next/head'
 
 import MeetupDetail from '../../components/meetups/MeetupDetail'
 
 const databaseName = 'meetups'
 const username = 'walid'
-const userPassword = ''
+const userPassword = ''  // enter password of the database
 
 const MeetupDetails = ({ meetupData }) => {
   const id = 'm1'
@@ -16,6 +17,10 @@ const MeetupDetails = ({ meetupData }) => {
 
   return (
     <Fragment>
+      <Head>
+        <title>{meetupData.title}</title>
+        <meta name='description' content={meetupData.description} />
+      </Head>
       <MeetupDetail
         // key={id}
         // id={id}
